@@ -1,0 +1,62 @@
+
+<html>
+    <head>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+        <style>
+            th,td {
+                border: 2px solid black;
+            }
+            th {
+                font-weight: bold;
+            }
+            #container {
+                min-width: 310px;
+                max-width: 70%;  
+                margin: 0 auto
+            }
+        </style>
+
+    </head>
+
+
+<div id="container"></div>
+
+<table>
+    <tr>
+        <th>IP Address</th>
+        <th>Count</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td>{{ item|safe}}</td>
+            <td>{{ data[item] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+<script type="text/javascript">
+
+
+    Highcharts.chart('container', {
+        title: {
+            text: 'Amount of requests per unique IP address'
+        },
+    
+        xAxis: {
+            categories: {{ cat|safe }}
+        },
+    
+        series: [{
+            data: {{ dat }},
+            type: 'column',
+            name: 'Amount of requests'
+        }]
+    });
+    
+    
+    </script>
+</html>
