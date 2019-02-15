@@ -1,8 +1,3 @@
-<!--
-Readme.md er skrevet i markdown.
-For å rendre dette til Html må du åpne filen i en nettleser med en markdown plugin (f.eks. "Markdown Viewer" i Chrome)
--->
-
 
 # Introduction
 Python flask web app that takes a IIS log file, strips away garbage, and presents a graph of which IP addresses that has the most requests towards the IIS web site.
@@ -10,7 +5,7 @@ Python flask web app that takes a IIS log file, strips away garbage, and present
 
 # How to get it running
 
-1. Install Python (v3)
+1. Install Python (latest version of 3.x)
 2. Navigate to the root folder of this project (e.g. `C:\iis_loganalyse`)
 3. Create a new virtual environment with venv in the project folder:
     * `python -m venv C:\iis_loganalyse\`
